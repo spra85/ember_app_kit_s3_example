@@ -84,6 +84,7 @@ module.exports = function(grunt) {
   grunt.loadTasks('tasks'); // Loads tasks in `tasks/` folder
 
   config.env = process.env;
+  config.env.APP_ENV = config.env.APP_ENV || 'development';
 
 
   // App Kit's Main Tasks
