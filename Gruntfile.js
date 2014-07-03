@@ -92,12 +92,23 @@ module.exports = function(grunt) {
 
   // Generate the production version
   // ------------------
-  grunt.registerTask('dist', "Build a minified & production-ready version of your app.", [
-                     'clean:dist',
-                     'build:dist',
-                     'copy:assemble',
-                     'createDistVersion'
-                     ]);
+  if (config.env.APP_ENV === 'production') {
+    grunt.registerTask('dist', "Build a minified & production-ready version of your app.", [
+                       'clean:dist',
+                       'build:dist',
+                       'copy:assemble',
+                       'createDistVersion',
+                       's3',
+                       'cdn'
+                       ]);
+  } else {
+    grunt.registerTask('dist', "Build a minified & production-ready version of your app.", [
+                       'clean:dist',
+                       'build:dist',
+                       'copy:assemble',
+                       'createDistVersion'
+                       ]);
+  }
 
 
   // Default Task

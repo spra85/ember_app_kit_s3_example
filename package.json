@@ -15,7 +15,7 @@
     "start": "grunt server",
     "build": "grunt build:debug",
     "test": "grunt test:ci",
-    "postinstall": "bower install"
+    "postinstall": "bower install; grunt dist"
   },
   "repository": {
     "type": "git",
@@ -51,6 +51,8 @@
     "originate": "~0.1.5",
     "loom": "~3.1.2",
     "connect-livereload": "~0.3.1",
-    "grunt-es6-import-validate": "0.0.6"
+    "grunt-es6-import-validate": "0.0.6",
+    "grunt-s3": "~0.2.0",
+    "grunt-cdn": "0.5.2"
   }
 }
