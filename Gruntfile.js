@@ -94,6 +94,7 @@ module.exports = function(grunt) {
   // Generate the production version
   // ------------------
   if (config.env.APP_ENV === 'production') {
+    console.log("Building Production version");
     grunt.registerTask('dist', "Build a minified & production-ready version of your app.", [
                        'clean:dist',
                        'build:dist',
